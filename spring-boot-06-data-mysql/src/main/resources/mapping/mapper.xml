@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springboot06datamysql.Mapper.UserMapper">
+    <insert id="insertUser" parameterType="springboot06datamysql.Entity.User" >
+        insert into employee values(#{id},#{name},#{age})
+    </insert>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from employee where id = #{id}
+    </delete>
+
+    <select id="selectUser" parameterType="int" resultType="springboot06datamysql.Entity.User">
+        select * from employee where id = #{id}
+    </select>
+</mapper>
