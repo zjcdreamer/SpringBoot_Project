@@ -19,4 +19,15 @@ public class EmpController {
         Employee emp = empService.getEmp(id);
         return emp;
     }
+
+    @GetMapping("/emp")
+    public Employee updateEmp(Employee employee){
+        Employee employee1 = empService.updateEmployee(employee);
+        return employee1;
+    }
+
+    @GetMapping("/delemp/{id}")
+    public void deletEmp(@PathVariable("id") int id){
+        empService.deleteEmp(id);
+    }
 }
